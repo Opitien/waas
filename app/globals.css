@@ -16,14 +16,14 @@
 }
 
 :root {
-  --background: 230 40% 4%;
-  --primary: 270 100% 64%;
-  --accent: 180 100% 50%;
+  --background: 0 0% 6%;
+  --primary: 14 100% 56%;
+  --accent: 25 100% 65%;
   --foreground: 0 0% 100%;
-  --card: 230 40% 7%;
-  --muted: 230 40% 12%;
-  --border: 230 40% 15%;
-  --radius: 0.75rem;
+  --card: 0 0% 9%;
+  --muted: 0 0% 15%;
+  --border: 0 0% 18%;
+  --radius: 0.25rem;
 }
 
 @layer base {
@@ -53,11 +53,11 @@
   }
 
   .primary-gradient {
-    background: linear-gradient(135deg, hsl(var(--primary)), hsl(280 100% 70%));
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(25 100% 65%));
   }
 
   .accent-gradient {
-    background: linear-gradient(135deg, hsl(var(--accent)), hsl(190 100% 60%));
+    background: linear-gradient(135deg, hsl(var(--accent)), hsl(14 100% 45%));
   }
 
   .btn-fill-up {
@@ -86,13 +86,13 @@
 }
 
 @keyframes glow-pulse {
-  0%, 100% { box-shadow: 0 0 20px hsla(270, 100%, 64%, 0.1); }
-  50% { box-shadow: 0 0 40px hsla(270, 100%, 64%, 0.2); }
+  0%, 100% { box-shadow: 0 0 20px hsla(14, 100%, 56%, 0.1); }
+  50% { box-shadow: 0 0 40px hsla(14, 100%, 56%, 0.2); }
 }
 
 @keyframes float-pulse {
-  0%, 100% { transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 20px hsla(270, 100%, 64%, 0.5); }
-  50% { transform: translate(-50%, -50%) scale(1.1); box-shadow: 0 0 40px hsla(270, 100%, 64%, 0.8); }
+  0%, 100% { transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 20px hsla(14, 100%, 56%, 0.5); }
+  50% { transform: translate(-50%, -50%) scale(1.1); box-shadow: 0 0 40px hsla(14, 100%, 56%, 0.8); }
 }
 
 .animate-marquee {
