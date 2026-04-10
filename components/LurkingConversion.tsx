@@ -1,52 +1,35 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 
 export const LurkingConversion = () => {
-  const [isIntentional, setIsIntentional] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      // Check if user has scrolled to high intent areas (Pricing starts around 1500px usually)
-      if (window.scrollY > 1200) {
-        setIsIntentional(true);
-      } else {
-        setIsIntentional(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <div className="fixed bottom-10 right-10 z-[200]">
-      <AnimatePresence mode="wait">
-        {!isIntentional ? (
-          <motion.button
-            key="standard"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.8, y: 50 }}
-            className="px-6 py-3 bg-[hsl(var(--card))] border border-[hsl(var(--border))] text-white font-body text-xs tracking-[0.1em] uppercase rounded-full shadow-2xl flex items-center gap-3 group overflow-hidden"
-          >
-            <div className="w-2 h-2 rounded-full bg-[hsl(var(--primary))] animate-pulse" />
-            Book a Demo
-          </motion.button>
-        ) : (
-          <motion.button
-            key="intentional"
-            initial={{ opacity: 0, scale: 0, x: 100, y: 100 }}
-            animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
-            exit={{ opacity: 0, scale: 0 }}
-            layoutId="conversion-orb"
-            className="w-24 h-24 rounded-full bg-[hsl(var(--primary))] text-black font-display font-bold text-[10px] uppercase leading-none text-center flex items-center justify-center p-4 float-pulse shadow-[0_0_50px_hsl(14_100%_56%_/_0.5)] border-4 border-black"
-          >
-            Start Now <br /> ⚡
-          </motion.button>
-        )}
-      </AnimatePresence>
+    <div className="fixed bottom-8 right-8 z-[200]">
+      <motion.button
+        initial={{ y: 100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 2, duration: 1, ease: [0.19, 1, 0.22, 1] }}
+        whileHover={{ scale: 1.05, boxShadow: "0 0 30px hsla(270, 100%, 64%, 0.4)" }}
+        whileTap={{ scale: 0.95 }}
+        className="px-8 py-4 bg-[hsl(var(--primary))] text-white font-display font-black text-[10px] tracking-[0.2em] uppercase rounded-full shadow-2xl flex items-center gap-3 group border border-white/20"
+      >
+        Initialize Growth
+        <svg 
+          width="16" 
+          height="16" 
+          viewBox="0 0 24 24" 
+          fill="none" 
+          stroke="currentColor" 
+          strokeWidth="3" 
+          strokeLinecap="round" 
+          strokeLinejoin="round"
+          className="group-hover:translate-x-1 transition-transform"
+        >
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </motion.button>
     </div>
   );
 };

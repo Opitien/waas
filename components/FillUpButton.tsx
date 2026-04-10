@@ -16,12 +16,10 @@ export const FillUpButton = ({ children, className, ...props }: FillUpButtonProp
         className
       )}
       {...props}
-    )
-    {
-      /* The Fill Layer */
-    }
-    <div className="absolute inset-0 bg-white translate-y-[101%] transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:translate-y-0 -z-10" />
-    <span className="relative z-10">{children}</span>
+    >
+      {/* The Fill Layer */}
+      <div className="absolute inset-0 bg-white translate-y-[101%] transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:translate-y-0 -z-10" />
+      <span className="relative z-10">{children}</span>
     </button>
   );
 };

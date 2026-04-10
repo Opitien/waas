@@ -5,68 +5,75 @@ import { motion } from "framer-motion";
 
 const benefits = [
   {
+    tag: "CAPITAL",
     title: "Zero Upfront Cost",
-    desc: "Build your dream website without the massive initial investment. Pay a monthly subscription instead.",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square">
-        <rect x="2" y="5" width="20" height="14" rx="2" />
-        <line x1="2" y1="10" x2="22" y2="10" />
-      </svg>
-    ),
+    desc: "Launch without burning cash. We replace the $10k invoice with a manageable monthly subscription.",
+    stat: "0.00 upfront",
   },
   {
-    title: "Lifetime Maintenance",
-    desc: "Never worry about security patches, hosting issues, or broken links. We handle everything for you.",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square">
-        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.77 3.77z" />
-      </svg>
-    ),
+    tag: "OPERATIONS",
+    title: "Lifetime Support",
+    desc: "Security, updates, and optimization are baked into the core. You focus on sales; we handle the stack.",
+    stat: "24/7 Monitoring",
   },
   {
-    title: "Infinite Scalability",
-    desc: "Start small and grow. Add custom features, e-commerce, or complex systems as your business expands.",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="square">
-        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
-        <polyline points="17 6 23 6 23 12" />
-      </svg>
-    ),
+    tag: "ENGINEERING",
+    title: "Infinite Scale",
+    desc: "Built on Next.js 16 and Vercel Edge. Your site handles 10 users or 10 million with the same latency.",
+    stat: "Global Edge",
   },
 ];
 
 export const Benefits = () => {
   return (
-    <section id="services" className="py-32 px-6">
+    <section id="services" className="py-32 px-6 relative">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-20">
-          <span className="text-[hsl(var(--primary))] font-body text-[10px] tracking-[0.3em] uppercase block mb-4">
-            Advantages
-          </span>
-          <h2 className="text-6xl font-display font-bold tracking-tighter uppercase italic">
-            What you <br /> <span className="text-white/20">actually get.</span>
-          </h2>
+        <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-10">
+          <div className="max-w-xl">
+            <span className="font-mono text-[10px] text-[hsl(var(--primary))] uppercase tracking-[0.3em] block mb-4">
+              [ THE CORE ADVANTAGE ]
+            </span>
+            <h2 className="text-6xl font-display font-bold tracking-tighter uppercase italic leading-[0.9]">
+              What you <br /> <span className="text-white/20">actually get.</span>
+            </h2>
+          </div>
+          <div className="h-px flex-1 bg-[hsl(var(--border))] hidden md:block mb-4" />
+          <p className="font-mono text-[11px] text-white/30 uppercase tracking-widest max-w-[200px] leading-relaxed">
+            Architected for conversion and structural integrity.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 border border-[hsl(var(--border))]">
           {benefits.map((benefit, i) => (
             <motion.div
               key={benefit.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
-              className="group p-8 bg-[hsl(var(--card))] border border-[hsl(var(--border))] rounded-sm hover:border-[hsl(var(--primary))]/30 transition-colors duration-500"
+              transition={{ delay: i * 0.1, duration: 0.8 }}
+              className="group p-12 border-b md:border-b-0 md:border-r border-[hsl(var(--border))] last:border-0 relative overflow-hidden"
             >
-              <div className="w-12 h-12 bg-[hsl(var(--primary))]/10 rounded-sm flex items-center justify-center text-[hsl(var(--primary))] mb-8 group-hover:scale-110 transition-transform duration-500">
-                {benefit.icon}
+              <div className="absolute top-0 right-0 p-4 font-mono text-[9px] text-white/10 group-hover:text-[hsl(var(--primary))]/30 transition-colors">
+                {benefit.tag}
               </div>
-              <h3 className="text-white font-display font-bold text-lg uppercase tracking-wider mb-4">
+              
+              <div className="mb-12">
+                 <div className="w-10 h-10 border border-[hsl(var(--primary))]/30 flex items-center justify-center text-[hsl(var(--primary))] group-hover:bg-[hsl(var(--primary))] group-hover:text-black transition-all duration-500">
+                    <span className="font-mono text-[10px] font-bold">0{i+1}</span>
+                 </div>
+              </div>
+
+              <h3 className="text-white font-display font-bold text-xl uppercase tracking-tight mb-4 text-balance">
                 {benefit.title}
               </h3>
-              <p className="text-white/40 font-body text-sm leading-relaxed">
+              <p className="text-white/40 font-body text-sm leading-relaxed mb-10">
                 {benefit.desc}
               </p>
+
+              <div className="pt-6 border-t border-[hsl(var(--border))] flex items-center justify-between">
+                <span className="font-mono text-[9px] text-white/20 uppercase">Technical Metric</span>
+                <span className="font-mono text-[10px] text-[hsl(var(--primary))]">{benefit.stat}</span>
+              </div>
             </motion.div>
           ))}
         </div>

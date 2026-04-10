@@ -1,15 +1,29 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-space-grotesk);
+  --font-mono: var(--font-space-mono);
+}
+
+.mesh-bg {
+  background-color: hsl(var(--background));
+  background-image: 
+    radial-gradient(at 0% 0%, hsla(270, 100%, 64%, 0.1) 0, transparent 50%), 
+    radial-gradient(at 100% 0%, hsla(180, 100%, 50%, 0.05) 0, transparent 50%),
+    radial-gradient(at 50% 100%, hsla(270, 100%, 64%, 0.05) 0, transparent 50%);
+  background-attachment: fixed;
+}
 
 :root {
-  --background: 0 0% 6%;
-  --primary: 14 100% 56%;
+  --background: 230 40% 4%;
+  --primary: 270 100% 64%;
+  --accent: 180 100% 50%;
   --foreground: 0 0% 100%;
-  --card: 0 0% 9%;
-  --muted: 0 0% 15%;
-  --border: 0 0% 18%;
-  --radius: 0.25rem;
+  --card: 230 40% 7%;
+  --muted: 230 40% 12%;
+  --border: 230 40% 15%;
+  --radius: 0.75rem;
 }
 
 @layer base {
@@ -18,7 +32,6 @@
   }
   body {
     @apply bg-[hsl(var(--background))] text-[hsl(var(--foreground))] font-sans antialiased selection:bg-[hsl(var(--primary))] selection:text-white;
-    cursor: none;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -39,8 +52,12 @@
     letter-spacing: -0.01em;
   }
 
-  .orange-gradient {
-    background: linear-gradient(135deg, hsl(14 100% 56%), hsl(25 100% 65%));
+  .primary-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(280 100% 70%));
+  }
+
+  .accent-gradient {
+    background: linear-gradient(135deg, hsl(var(--accent)), hsl(190 100% 60%));
   }
 
   .btn-fill-up {
@@ -49,7 +66,7 @@
 
   .btn-fill-up::before {
     content: '';
-    @apply absolute bottom-0 left-0 w-full h-0 bg-[hsl(var(--foreground))] transition-all duration-300 -z-10 text-[hsl(var(--background))];
+    @apply absolute bottom-0 left-0 w-full h-0 bg-[hsl(var(--primary))] transition-all duration-300 -z-10;
   }
 
   .btn-fill-up:hover::before {
@@ -57,21 +74,9 @@
   }
 
   .btn-fill-up:hover {
-    @apply text-[hsl(var(--background))];
+    @apply text-white;
+    box-shadow: 0 0 30px hsla(270, 100%, 64%, 0.3);
   }
-}
-
-/* Filmic Grain */
-.grain-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0.04;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
 /* Animations */
@@ -81,13 +86,13 @@
 }
 
 @keyframes glow-pulse {
-  0%, 100% { box-shadow: 0 0 20px hsl(14 100% 56% / 0.2); }
-  50% { box-shadow: 0 0 40px hsl(14 100% 56% / 0.4); }
+  0%, 100% { box-shadow: 0 0 20px hsla(270, 100%, 64%, 0.1); }
+  50% { box-shadow: 0 0 40px hsla(270, 100%, 64%, 0.2); }
 }
 
 @keyframes float-pulse {
-  0%, 100% { transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 20px hsl(14 100% 56%); }
-  50% { transform: translate(-50%, -50%) scale(1.1); box-shadow: 0 0 40px hsl(14 100% 56%); }
+  0%, 100% { transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 20px hsla(270, 100%, 64%, 0.5); }
+  50% { transform: translate(-50%, -50%) scale(1.1); box-shadow: 0 0 40px hsla(270, 100%, 64%, 0.8); }
 }
 
 .animate-marquee {
@@ -98,4 +103,8 @@
 
 .float-pulse {
   animation: float-pulse 3s ease-in-out infinite;
+}
+
+.glass-card {
+  @apply bg-white/5 backdrop-blur-xl border border-white/10;
 }

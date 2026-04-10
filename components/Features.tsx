@@ -6,49 +6,57 @@ import { motion } from "framer-motion";
 const features = [
   {
     title: "Vercel Edge Ready",
-    desc: "Global distribution for millisecond load times anywhere in the world.",
+    code: "NODE_ENV=production",
+    desc: "Global distribution for millisecond load times via edge functions.",
   },
   {
-    title: "SEO Optimized",
-    desc: "Semantic HTML and meta-structures built-in for organic growth.",
+    title: "SEO Meta-Structure",
+    code: "ROBOTS=index,follow",
+    desc: "Semantic HTML and JSON-LD built into the core for search dominance.",
   },
   {
     title: "Glassmorphism UI",
-    desc: "Modern, layered aesthetics that feel high-end and interactive.",
+    code: "BACKDROP_BLUR=20px",
+    desc: "Layered, mathematical aesthetics that respond to user interaction.",
   },
   {
-    title: "100% Responsive",
-    desc: "Perfectly optimized for mobile, tablet, and ultra-wide desktops.",
+    title: "100% Core Web Vitals",
+    code: "LCP < 1.2s",
+    desc: "Optimized for mobile-first indexing and high-performance ranking.",
   },
   {
-    title: "Dark Mode First",
-    desc: "Easier on the eyes, premium aesthetic as the native default.",
+    title: "Native Analytics",
+    code: "PRIVACY=compliant",
+    desc: "Built-in telemetry that respects user privacy while delivering growth data.",
   },
   {
-    title: "Custom Analytics",
-    desc: "Track your growth without privacy-invasive scripts.",
+    title: "Custom Scalability",
+    code: "ARCHITECTURE=modular",
+    desc: "The system evolves with your business. No proprietary locks.",
   },
 ];
 
 export const Features = () => {
   return (
-    <section id="features" className="py-32 px-6">
+    <section id="features" className="py-32 px-6 bg-[hsl(var(--card))]/20">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-20 grid md:grid-cols-2 gap-10 items-end">
-          <div>
-            <span className="text-[hsl(var(--primary))] font-body text-[10px] tracking-[0.3em] uppercase block mb-4">
-              Capabilities
+        <div className="grid lg:grid-cols-3 gap-20 mb-32 items-center">
+          <div className="lg:col-span-2">
+            <span className="font-mono text-[10px] text-[hsl(var(--primary))] uppercase tracking-[0.4em] block mb-4">
+              [ SPECIFICATIONS ]
             </span>
-            <h2 className="text-6xl font-display font-bold tracking-tighter uppercase italic leading-none">
-              Features <br /> <span className="text-white/20">you'll love.</span>
+            <h2 className="text-6xl font-display font-bold tracking-tighter uppercase italic leading-[0.9]">
+              Built for <br /> <span className="text-white/20">high conversion.</span>
             </h2>
           </div>
-          <p className="text-white/40 font-body text-lg leading-relaxed max-w-sm ml-auto">
-            Our technology stack is built for speed, conversion, and architectural beauty. No shortcuts.
-          </p>
+          <div className="p-8 border-l border-[hsl(var(--primary))]/20">
+            <p className="text-white/40 font-mono text-xs uppercase leading-relaxed tracking-wider">
+              "We don't build sites. We deploy growth systems architected on the latest React 19 stack."
+            </p>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 px-[1px] bg-[hsl(var(--border))]">
           {features.map((feature, i) => (
             <motion.div
               key={feature.title}
@@ -56,12 +64,19 @@ export const Features = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05, duration: 0.5 }}
-              className="p-10 border border-[hsl(var(--border))] hover:bg-[hsl(var(--primary))]/5 transition-colors duration-300 group"
+              className="p-10 bg-[hsl(var(--background))] hover:bg-[hsl(var(--primary))]/5 transition-colors duration-300 group"
             >
-              <h3 className="text-white font-display font-bold text-xs uppercase tracking-widest mb-4 group-hover:text-[hsl(var(--primary))] transition-colors duration-300">
+              <div className="flex justify-between items-start mb-12">
+                <div className="font-mono text-[9px] text-[hsl(var(--primary))] px-2 py-0.5 bg-[hsl(var(--primary))]/5 border border-[hsl(var(--primary))]/10">
+                   {feature.code}
+                </div>
+                <div className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--primary))]/40" />
+              </div>
+              
+              <h3 className="text-white font-display font-bold text-xs uppercase tracking-[0.2em] mb-4 group-hover:text-[hsl(var(--primary))] transition-colors duration-300">
                 {feature.title}
               </h3>
-              <p className="text-white/40 font-body text-xs uppercase tracking-wider leading-relaxed">
+              <p className="text-white/40 font-mono text-[10px] uppercase tracking-wider leading-relaxed">
                 {feature.desc}
               </p>
             </motion.div>

@@ -6,7 +6,7 @@ import { FillUpButton } from "./FillUpButton";
 
 export const Navbar = () => {
   return (
-    <nav className="fixed top-0 left-0 w-full z-[100] px-6 md:px-12 py-8 flex justify-between items-center bg-transparent backdrop-blur-[2px]">
+    <nav className="fixed top-0 left-0 w-full z-[100] px-6 md:px-12 py-8 flex justify-between items-center bg-transparent backdrop-blur-md">
       <div className="flex items-center gap-2 group">
         <Link href="/" className="text-white font-display text-xl font-bold tracking-tighter">
           WAAS<span className="text-[hsl(var(--primary))]">.</span>
