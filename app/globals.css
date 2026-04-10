@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 6%;
+  --primary: 14 100% 56%;
+  --foreground: 0 0% 100%;
+  --card: 0 0% 9%;
+  --muted: 0 0% 15%;
+  --border: 0 0% 18%;
+  --radius: 0.25rem;
+}
+
+@layer base {
+  * {
+    @apply border-[hsl(var(--border))];
+  }
+  body {
+    @apply bg-[hsl(var(--background))] text-[hsl(var(--foreground))] font-sans antialiased selection:bg-[hsl(var(--primary))] selection:text-white;
+    cursor: none;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .text-8xl {
+    font-size: clamp(3.5rem, 10vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+  }
+  
+  .text-6xl {
+    font-size: clamp(2.5rem, 8vw, 3.75rem);
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+
+  .orange-gradient {
+    background: linear-gradient(135deg, hsl(14 100% 56%), hsl(25 100% 65%));
+  }
+
+  .btn-fill-up {
+    @apply relative overflow-hidden transition-all duration-300;
+  }
+
+  .btn-fill-up::before {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-0 bg-[hsl(var(--foreground))] transition-all duration-300 -z-10 text-[hsl(var(--background))];
+  }
+
+  .btn-fill-up:hover::before {
+    @apply h-full;
+  }
+
+  .btn-fill-up:hover {
+    @apply text-[hsl(var(--background))];
+  }
+}
+
+/* Filmic Grain */
+.grain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Animations */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px hsl(14 100% 56% / 0.2); }
+  50% { box-shadow: 0 0 40px hsl(14 100% 56% / 0.4); }
+}
+
+@keyframes float-pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 20px hsl(14 100% 56%); }
+  50% { transform: translate(-50%, -50%) scale(1.1); box-shadow: 0 0 40px hsl(14 100% 56%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: fit-content;
+  animation: marquee 30s linear infinite;
+}
+
+.float-pulse {
+  animation: float-pulse 3s ease-in-out infinite;
+}
