@@ -1,80 +1,109 @@
 "use client";
 
 import React, { useState } from "react";
+import { ChevronDown, HelpCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const faqs = [
-  {
-    q: "Is there really no upfront cost?",
-    a: "Correct. We believe in providing value first. You pay a setup fee to cover initial configuration, and then simply subscribe to our service.",
-  },
-  {
-    q: "Can I cancel my subscription any time?",
-    a: "Yes, you can cancel at any time. However, since it is a subscription service, the website hosted on our infrastructure will be taken down upon cancellation.",
-  },
-  {
-    q: "Do I own the domain name?",
-    a: "Yes, you own your domain. We manage the technical configuration for you, but the asset belongs to your business.",
-  },
-  {
-    q: "What if I need custom features later?",
-    a: "Our system is built on Next.js, making it highly extensible. We can roll out custom updates to your specific site as your business needs evolve.",
-  },
-  {
-    q: "Who handles the content updates?",
-    a: "We provide you with a light-weight CMS or you can simply send us your updates, and we'll handle the implementation within 24-48 hours.",
-  },
-];
+interface FAQItem {
+  question: string;
+  answer: string;
+}
 
-export const FAQ = () => {
-  const [active, setActive] = useState<number | null>(null);
+export function FAQ() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const faqs: FAQItem[] = [
+    {
+      question: "What exactly is WAAS?",
+      answer: "WAAS stands for Website As A Subscription. Instead of paying thousands of dollars upfront to design, develop, and host a website (and dealing with ongoing administrative headaches), you pay a simple, predictable monthly fee. We act as your dedicated web engineering studio, designing, coding, hosting, securing, and continuously updating your platform on demand.",
+    },
+    {
+      question: "How fast do my design & content updates get completed?",
+      answer: "Standard content updates (swapping text, uploading assets, adding blogs, editing pricing plans) are deployed to production within 2 to 24 hours of submission. Larger request sprints (e.g. building a custom Stripe checkout funnel or integrating a complete customer database) are broken into rapid dev cycles and typically go live in 2 to 5 days.",
+    },
+    {
+      question: "Is premium edge hosting included?",
+      answer: "Yes, fully managed hosting is 100% included in all subscription tiers. We deploy your site directly to a global multi-cloud Edge CDN. This guarantees 100/100 Lighthouse speed scores, built-in SSL certificates, DDoS firewalls, automatic nightly backups, and maximum uptime without extra hosting invoices.",
+    },
+    {
+      question: "Can I pause, upgrade, or cancel my subscription?",
+      answer: "Absolutely. There are no lock-ins, setup fees, or hidden termination clauses. You can scale your tier up during massive marketing campaigns, pause your subscription during slow development quarters, or cancel completely whenever you want. Any design assets and compiled website code completed during your active subscription are 100% yours to keep.",
+    },
+  ];
 
   return (
-    <section id="faq" className="py-32 px-6">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-20">
-          <span className="text-[hsl(var(--primary))] font-body text-[10px] tracking-[0.3em] uppercase block mb-4">
-            Curiosities
+    <section id="faq" className="py-20 lg:py-28 bg-mint-50 px-6 lg:px-8 border-y border-slate-100 overflow-hidden">
+      <div className="mx-auto max-w-4xl">
+        
+        {/* Section Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="text-center max-w-2xl mx-auto mb-16"
+        >
+          <span className="rounded-full bg-emerald-100 text-emerald-800 font-bold text-xs uppercase tracking-wide px-3 py-1 border border-emerald-200">
+            Common Questions
           </span>
-          <h2 className="text-6xl font-display font-bold tracking-tighter uppercase italic leading-none mb-4">
-            What you <span className="text-[hsl(var(--primary))]">actually</span> get.
+          <h2 className="mt-4 font-display text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl leading-tight">
+            Frequently Asked Questions
           </h2>
-          <p className="text-white/40 font-body text-sm uppercase tracking-widest">(FAQ)</p>
-        </div>
+          <p className="mt-4 text-slate-500 text-base sm:text-lg">
+            Can't find what you are looking for? Ping us direct on Slack or drop a line to our support inbox.
+          </p>
+        </motion.div>
 
-        <div className="space-y-4">
-          {faqs.map((faq, i) => (
-            <div key={i} className="border border-[hsl(var(--border))] rounded-sm overflow-hidden">
-              <button
-                onClick={() => setActive(active === i ? null : i)}
-                className="w-full p-8 flex justify-between items-center text-left bg-[hsl(var(--card))] hover:bg-[hsl(var(--muted))]/20 transition-colors duration-300"
+        {/* Accordions */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
+          className="space-y-4"
+        >
+          {faqs.map((faq, idx) => {
+            const isOpen = openIndex === idx;
+            return (
+              <div
+                key={idx}
+                className="rounded-2xl border border-slate-200/60 bg-white overflow-hidden shadow-sm hover:shadow-md transition-shadow"
               >
-                <span className="text-white font-display font-bold text-xs uppercase tracking-widest">{faq.q}</span>
-                <span className={`text-[hsl(var(--primary))] transition-transform duration-300 ${active === i ? 'rotate-45' : ''}`}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <line x1="12" y1="5" x2="12" y2="19" />
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                  </svg>
-                </span>
-              </button>
-              <AnimatePresence>
-                {active === i && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
-                  >
-                    <div className="p-8 pt-0 bg-[hsl(var(--card))] text-white/40 font-body text-sm leading-relaxed border-t border-[hsl(var(--border))/50">
-                      {faq.a}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          ))}
-        </div>
+                <button
+                  onClick={() => setOpenIndex(isOpen ? null : idx)}
+                  className="flex w-full items-center justify-between p-5 sm:p-6 text-left focus:outline-none cursor-pointer"
+                >
+                  <span className="text-sm sm:text-base font-bold text-slate-800 flex items-center gap-3">
+                    <HelpCircle className="h-5 w-5 text-emerald-500 shrink-0" />
+                    {faq.question}
+                  </span>
+                  <ChevronDown
+                    className={`h-5 w-5 text-slate-400 transition-transform duration-300 shrink-0 ${
+                      isOpen ? "rotate-180 text-emerald-500" : ""
+                    }`}
+                  />
+                </button>
+                
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.25, ease: "easeInOut" }}
+                    >
+                      <div className="px-5 sm:px-6 pb-5 sm:pb-6 pt-1 text-slate-600 text-sm sm:text-base leading-relaxed border-t border-slate-50/50">
+                        {faq.answer}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
+        </motion.div>
+
       </div>
     </section>
   );
-};
+}

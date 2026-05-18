@@ -1,50 +1,52 @@
+"use client";
+
+import React from "react";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
-import { Benefits } from "@/components/Benefits";
-import { ApplyCases } from "@/components/ApplyCases";
 import { Features } from "@/components/Features";
 import { Testimonials } from "@/components/Testimonials";
-import { Integrations } from "@/components/Integrations";
 import { Pricing } from "@/components/Pricing";
 import { FAQ } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
-import { LurkingConversion } from "@/components/LurkingConversion";
+import { Preloader } from "@/components/Preloader";
+import { DemoModal } from "@/components/DemoModal";
+import { SmoothScroll } from "@/components/SmoothScroll";
+import { CustomCursor } from "@/components/CustomCursor";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      <Navbar />
-      
-      {/* 1. Hero Section */}
-      <Hero />
-      
-      {/* 2. Benefits Section ("What you get") */}
-      <Benefits />
-      
-      {/* 3. Apply Cases ("For who?") */}
-      <ApplyCases />
-      
-      {/* 4. Features Section ("Features you'll love") */}
-      <Features />
-      
-      {/* 5. Testimonials Section */}
-      <Testimonials />
-      
-      {/* 6. Tools & Integrations Section */}
-      <Integrations />
-      
-      {/* 7. Pricing Section */}
-      <Pricing />
-      
-      {/* 8. FAQ Section */}
-      <FAQ />
+    <main className="min-h-screen bg-white">
+      {/* Premium custom mouse tracking spring cursor */}
+      <CustomCursor />
 
+      {/* 0. Brand Preloader with interchanging logo circles */}
+      <Preloader />
 
-      {/* 9. Footer Section */}
-      <Footer />
+      {/* 0.5. Global Premium Booking & Pricing Modal Overlay */}
+      <DemoModal />
 
-      {/* Persistent Interaction Components */}
-      <LurkingConversion />
+      <SmoothScroll>
+        {/* 1. Global Navigation Bar */}
+        <Navbar />
+        
+        {/* 2. Hero & Interactive Core Dashboard */}
+        <Hero />
+        
+        {/* 3. Alternating Capabilities & Interactive Modules Grid */}
+        <Features />
+        
+        {/* 4. Social Proof (Testimonials infinite scrolling marquee slider) */}
+        <Testimonials />
+        
+        {/* 5. Predictable Subscription Tiers (Starter, Growth, charcoal-black Enterprise) */}
+        <Pricing />
+        
+        {/* 6. Sleek FAQ Accordion Grid inside Mint container */}
+        <FAQ />
+
+        {/* 7. Premium Deep Forest Green CTA Banner & Structured Links Footer */}
+        <Footer />
+      </SmoothScroll>
     </main>
   );
 }

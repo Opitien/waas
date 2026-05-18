@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk, Space_Mono } from "next/font/google";
 import "./globals.css";
-import { CursorFollower } from "@/components/CursorFollower";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,8 +19,35 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "WAAS | Website As A Subscription",
-  description: "Steadily run a website for your business with as low as 15k monthly. Premium design, zero maintenance headache.",
+  title: "WAAS | Websites Built, Managed, and Updated for You On Demand",
+  description: "Stop hiring expensive agencies or wrestling with clunky template builders. Get a premium custom-built website, managed performance, and unlimited design updates under one simple subscription.",
+  metadataBase: new URL("https://waas.thebigdev.co"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "WAAS | Websites Built, Managed, and Updated for You On Demand",
+    description: "Stop hiring expensive agencies or wrestling with clunky template builders. Get a premium custom-built website, managed performance, and unlimited design updates under one simple subscription.",
+    url: "https://waas.thebigdev.co",
+    siteName: "WAAS",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "WAAS - Websites Built, Managed, and Updated for You On Demand",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "WAAS | Websites Built, Managed, and Updated for You On Demand",
+    description: "Stop hiring expensive agencies or wrestling with clunky template builders. Get a premium custom-built website, managed performance, and unlimited design updates under one simple subscription.",
+    images: ["/og-image.png"],
+    creator: "@thebigdev",
+  },
 };
 
 export default function RootLayout({
@@ -32,7 +58,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} ${spaceMono.variable} antialiased selection:bg-[#fb4e1a] selection:text-white`}
+        className={`${inter.variable} ${spaceGrotesk.variable} ${spaceMono.variable} antialiased selection:bg-emerald-500 selection:text-white`}
       >
         {children}
       </body>
