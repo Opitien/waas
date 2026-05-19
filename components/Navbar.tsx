@@ -51,7 +51,9 @@ export function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-slate-100 bg-white/80 backdrop-blur-md">
+    <header className={`sticky top-0 z-50 w-full border-b border-slate-100 backdrop-blur-md transition-colors duration-250 ${
+      isOpen ? "bg-white" : "bg-white/80"
+    }`}>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex h-22 items-center justify-between">
           {/* Left: Brand Logo */}

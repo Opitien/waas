@@ -35,7 +35,7 @@ export function Testimonials() {
   ];
 
   return (
-    <section className="bg-mint-50 py-20 lg:py-28 border-y border-slate-100 overflow-hidden relative">
+    <section className="bg-mint-50 py-20 lg:py-28 border-y border-slate-100 overflow-hidden relative scroll-mt-24">
       {/* Inline styles for custom marquee transitions to prevent package dependencies or global pollute */}
       <style>{`
         @keyframes marqueeLeftToRight {
@@ -68,7 +68,7 @@ export function Testimonials() {
           <span className="rounded-full bg-emerald-100 text-emerald-800 font-bold text-xs uppercase tracking-wide px-3 py-1 border border-emerald-200">
             Client Success
           </span>
-          <h2 className="mt-4 font-display text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl leading-tight">
+          <h2 className="mt-4 font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-5xl leading-tight">
             What fast-moving teams are saying.
           </h2>
           <p className="mt-4 text-slate-500 text-base sm:text-lg">
@@ -85,7 +85,7 @@ export function Testimonials() {
           {duplicatedTestimonials.map((t, idx) => (
             <div
               key={idx}
-              className="w-[360px] sm:w-[420px] shrink-0 rounded-2xl border border-slate-200/60 bg-white p-7 shadow-sm shadow-slate-100 hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between cursor-pointer"
+              className="w-[300px] sm:w-[420px] shrink-0 rounded-2xl border border-slate-200/60 bg-white p-7 shadow-sm shadow-slate-100 hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between cursor-pointer"
             >
               <div className="space-y-4">
                 {/* Five Stars Rating */}

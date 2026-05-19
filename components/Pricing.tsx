@@ -65,7 +65,7 @@ export function Pricing() {
   ];
 
   return (
-    <section id="pricing" className="py-20 lg:py-32 bg-slate-50/50 overflow-hidden">
+    <section id="pricing" className="py-20 lg:py-32 bg-slate-50/50 overflow-hidden scroll-mt-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
         
         {/* Section Heading */}
@@ -79,7 +79,7 @@ export function Pricing() {
           <span className="rounded-full bg-emerald-50 text-emerald-700 font-bold text-xs uppercase tracking-wide px-3 py-1 border border-emerald-100">
             Simple Subscriptions
           </span>
-          <h2 className="mt-4 font-display text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl leading-tight">
+          <h2 className="mt-4 font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-5xl leading-tight">
             Flexible web infrastructure, <br />
             billed on a simple subscription.
           </h2>

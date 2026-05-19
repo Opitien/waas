@@ -12,7 +12,7 @@ export function Hero() {
   const [activeTab, setActiveTab] = useState("overview");
 
   return (
-    <section id="hero" className="relative overflow-hidden bg-white pt-16 pb-24 lg:pt-24 lg:pb-32">
+    <section id="hero" className="relative overflow-hidden bg-white pt-10 pb-20 lg:pt-24 lg:pb-32 scroll-mt-24">
       {/* Soft background grid gradient */}
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-60" />
 
@@ -35,9 +35,9 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
-          className="mt-8 font-display text-5xl font-extrabold tracking-tight text-slate-900 sm:text-7xl max-w-5xl mx-auto leading-[1.05]"
+          className="mt-6 font-display text-3xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 max-w-5xl mx-auto leading-[1.1] sm:leading-[1.05]"
         >
-          Websites Built, Managed, <br />
+          Websites Built, Managed, <br className="hidden sm:inline" />
           and Updated for You <span className="text-emerald-500 font-bold">On Demand</span>.
         </motion.h1>
 
@@ -46,7 +46,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-          className="mt-6 text-lg sm:text-xl leading-relaxed text-slate-500 max-w-3xl mx-auto font-medium"
+          className="mt-4 text-sm sm:text-lg md:text-xl leading-relaxed text-slate-500 max-w-3xl mx-auto font-medium px-2 sm:px-0"
         >
           Stop hiring expensive agencies or wrestling with clunky template builders. Get a premium custom-built website, managed performance, and unlimited design updates under one simple subscription.
         </motion.p>
@@ -56,17 +56,17 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
-          className="mt-10 flex flex-wrap items-center justify-center gap-4"
+          className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3.5 max-w-xs sm:max-w-none mx-auto px-4 sm:px-0"
         >
           <button
             onClick={() => triggerDemoModal()}
-            className="btn-bounce flex items-center gap-1.5 rounded-full bg-emerald-500 px-7 py-3 text-base font-bold text-white hover:bg-emerald-600 shadow-md shadow-emerald-500/10 cursor-pointer"
+            className="btn-bounce flex items-center justify-center gap-1.5 rounded-full bg-emerald-500 px-7 py-3.5 text-base font-bold text-white hover:bg-emerald-600 shadow-md shadow-emerald-500/10 cursor-pointer w-full sm:w-auto"
           >
             Book a Demo <ArrowRight className="h-4.5 w-4.5" />
           </button>
           <a
             href="#features"
-            className="btn-bounce flex items-center gap-1.5 rounded-full bg-mint-100 px-7 py-3 text-base font-bold text-emerald-800 hover:bg-mint-200"
+            className="btn-bounce flex items-center justify-center gap-1.5 rounded-full bg-mint-100 px-7 py-3.5 text-base font-bold text-emerald-800 hover:bg-mint-200 w-full sm:w-auto"
           >
             Explore WAAS <ArrowDown className="h-4.5 w-4.5 text-emerald-700 animate-bounce" />
           </a>
@@ -77,7 +77,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.4, ease: "easeOut" }}
-          className="mt-16 sm:mt-20 mx-auto max-w-5xl rounded-2xl border border-slate-200 bg-slate-50 p-3 sm:p-4 shadow-xl shadow-slate-100"
+          className="mt-12 sm:mt-20 mx-auto max-w-5xl rounded-2xl border border-slate-200 bg-slate-50 p-2 sm:p-4 shadow-xl shadow-slate-100"
         >
           <div className="rounded-xl border border-slate-200 bg-white shadow-sm overflow-hidden text-left">
             
@@ -98,10 +98,10 @@ export function Hero() {
             </div>
 
             {/* Dashboard Workspace */}
-            <div className="grid grid-cols-1 md:grid-cols-4 min-h-[420px]">
+            <div className="grid grid-cols-1 md:grid-cols-4 min-h-0 md:min-h-[420px]">
               
               {/* Left Navigation Sidebar */}
-              <div className="border-r border-slate-100 bg-slate-50/30 p-4 space-y-1.5">
+              <div className="border-b md:border-b-0 md:border-r border-slate-100 bg-slate-50/30 p-4 space-y-1.5">
                 <div className="px-2 py-1.5 text-xs font-bold text-slate-400 uppercase tracking-wider">
                   Site Manager
                 </div>
@@ -176,7 +176,7 @@ export function Hero() {
                 {activeTab === "overview" && (
                   <div className="space-y-6">
                     {/* Header metrics */}
-                    <div className="grid grid-cols-3 gap-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                       <div className="rounded-xl border border-slate-100 bg-slate-50/50 p-3.5">
                         <span className="block text-xs font-bold text-slate-400 uppercase">Page Vitals</span>
                         <span className="mt-1 block text-xl font-extrabold text-slate-900">100/100</span>
@@ -301,7 +301,7 @@ export function Hero() {
                       </span>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="rounded-xl border border-slate-100 bg-slate-50/30 p-4 space-y-1">
                         <span className="text-xs font-bold text-slate-400 uppercase">Average Latency</span>
                         <div className="text-2xl font-black text-slate-800">14ms</div>

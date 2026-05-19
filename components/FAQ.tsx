@@ -32,7 +32,7 @@ export function FAQ() {
   ];
 
   return (
-    <section id="faq" className="py-20 lg:py-28 bg-mint-50 px-6 lg:px-8 border-y border-slate-100 overflow-hidden">
+    <section id="faq" className="py-20 lg:py-28 bg-mint-50 px-6 lg:px-8 border-y border-slate-100 overflow-hidden scroll-mt-24">
       <div className="mx-auto max-w-4xl">
         
         {/* Section Heading */}
@@ -46,7 +46,7 @@ export function FAQ() {
           <span className="rounded-full bg-emerald-100 text-emerald-800 font-bold text-xs uppercase tracking-wide px-3 py-1 border border-emerald-200">
             Common Questions
           </span>
-          <h2 className="mt-4 font-display text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl leading-tight">
+          <h2 className="mt-4 font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-5xl leading-tight">
             Frequently Asked Questions
           </h2>
           <p className="mt-4 text-slate-500 text-base sm:text-lg">

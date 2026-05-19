@@ -27,7 +27,7 @@ export function Features() {
   };
 
   return (
-    <section id="features" className="space-y-28 py-20 lg:py-32 bg-white overflow-hidden">
+    <section id="features" className="space-y-28 py-20 lg:py-32 bg-white overflow-hidden scroll-mt-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         
         {/* Section Heading */}
@@ -41,7 +41,7 @@ export function Features() {
           <span className="rounded-full bg-emerald-50 text-emerald-700 font-bold text-xs uppercase tracking-wide px-3 py-1 border border-emerald-100">
             Platform Capabilities
           </span>
-          <h2 className="mt-4 font-display text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl leading-tight">
+          <h2 className="mt-4 font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-5xl leading-tight">
             Everything your business needs to shine online.
           </h2>
           <p className="mt-4 text-slate-500 text-base sm:text-lg">
@@ -61,7 +61,7 @@ export function Features() {
             <span className="inline-flex items-center gap-1 text-xs font-bold text-emerald-600 bg-emerald-50 border border-emerald-100 px-2 py-0.5 rounded-md uppercase tracking-wider">
               <Sparkles className="h-3.5 w-3.5" /> Design & Copy Engine
             </span>
-            <h3 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 leading-tight">
+            <h3 className="font-display text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 leading-tight">
               Control your brand aesthetics without writing a single line of code.
             </h3>
             <p className="text-slate-500 text-base sm:text-lg leading-relaxed">
@@ -300,7 +300,7 @@ export function Features() {
             <span className="inline-flex items-center gap-1 text-xs font-bold text-emerald-600 bg-emerald-50 border border-emerald-100 px-2 py-0.5 rounded-md uppercase tracking-wider">
               <Zap className="h-3.5 w-3.5" /> Speed & Performance
             </span>
-            <h3 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 leading-tight">
+            <h3 className="font-display text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 leading-tight">
               Lightning fast load speeds. Served directly from the Edge.
             </h3>
             <p className="text-slate-500 text-base sm:text-lg leading-relaxed">
@@ -343,7 +343,7 @@ export function Features() {
             <span className="inline-flex items-center gap-1 text-xs font-bold text-emerald-600 bg-emerald-50 border border-emerald-100 px-2 py-0.5 rounded-md uppercase tracking-wider">
               <ShieldCheck className="h-3.5 w-3.5" /> Managed Maintenance
             </span>
-            <h3 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 leading-tight">
+            <h3 className="font-display text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 leading-tight">
               Never worry about broken links, plugins, or host errors again.
             </h3>
             <p className="text-slate-500 text-base sm:text-lg leading-relaxed">

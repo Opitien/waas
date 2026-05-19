@@ -13,6 +13,7 @@ import { DemoModal } from "@/components/DemoModal";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { CustomCursor } from "@/components/CustomCursor";
 
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-white">

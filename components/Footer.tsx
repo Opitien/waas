@@ -124,7 +124,7 @@ export function Footer() {
 
             {/* Product */}
             <div className="space-y-4">
-              <h4 className="text-sm font-bold text-slate-350 uppercase tracking-widest">Product</h4>
+              <h4 className="text-sm font-bold text-emerald-400 uppercase tracking-widest">Product</h4>
               <ul className="space-y-3 text-sm text-slate-400">
                 <li><a href="#features" className="hover:text-emerald-400 transition-colors">Features</a></li>
                 <li><a href="#pricing" className="hover:text-emerald-400 transition-colors">Pricing tiers</a></li>
@@ -134,7 +134,7 @@ export function Footer() {
 
             {/* Resources */}
             <div className="space-y-4">
-              <h4 className="text-sm font-bold text-slate-350 uppercase tracking-widest">Resources</h4>
+              <h4 className="text-sm font-bold text-emerald-400 uppercase tracking-widest">Resources</h4>
               <ul className="space-y-3 text-sm text-slate-400">
                 <li><a href="#blog" className="hover:text-emerald-400 transition-colors">Dev blog</a></li>
                 <li><a href="#changelog" className="hover:text-emerald-400 transition-colors">Changelog</a></li>
@@ -144,7 +144,7 @@ export function Footer() {
 
             {/* Support */}
             <div className="space-y-4">
-              <h4 className="text-sm font-bold text-slate-350 uppercase tracking-widest">Support</h4>
+              <h4 className="text-sm font-bold text-emerald-400 uppercase tracking-widest">Support</h4>
               <ul className="space-y-3 text-sm text-slate-400">
                 <li><a href="#help" className="hover:text-emerald-400 transition-colors">Help desk</a></li>
                 <li><a href="#privacy" className="hover:text-emerald-400 transition-colors">Privacy policy</a></li>
@@ -154,7 +154,7 @@ export function Footer() {
 
             {/* Contact */}
             <div className="space-y-4">
-              <h4 className="text-sm font-bold text-slate-350 uppercase tracking-widest">Contact</h4>
+              <h4 className="text-sm font-bold text-emerald-400 uppercase tracking-widest">Contact</h4>
               <ul className="space-y-3 text-sm text-slate-400">
                 <li>
                   <a href="mailto:hello@waas.xyz" className="flex items-center gap-2 hover:text-emerald-400 transition-colors">
