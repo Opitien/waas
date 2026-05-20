@@ -13,15 +13,15 @@ export function Footer() {
         <div className="relative rounded-3xl bg-forest-900 border border-forest-700/60 p-8 sm:p-12 overflow-hidden shadow-2xl">
 
           {/* Subtle glow background */}
-          <div className="absolute top-0 right-0 h-[300px] w-[300px] rounded-full bg-emerald-500/10 blur-[100px] -z-10" />
+          <div className="absolute top-0 right-0 h-[300px] w-[300px] rounded-[20px] bg-emerald-500/10 blur-[100px] -z-10" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase px-3 py-1 tracking-wider">
+              <span className="inline-flex items-center gap-1.5 rounded-[20px] bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-medium font-medium px-3 py-1 tracking-wider">
                 Launch Fast
               </span>
-              <h3 className="font-display text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+              <h3 className="font-display text-2xl sm:text-5xl font-medium tracking-tight text-white leading-tight">
                 If you are wrestling with WordPress or templates, you are bleeding time. Let's change that.
               </h3>
               <p className="text-slate-400 text-sm sm:text-base leading-relaxed max-w-xl font-medium">
@@ -30,7 +30,7 @@ export function Footer() {
               <div className="pt-2 flex flex-wrap gap-4">
                 <button
                   onClick={() => triggerDemoModal()}
-                  className="btn-bounce flex items-center gap-2 rounded-full bg-emerald-500 hover:bg-emerald-600 px-6 py-3 text-sm font-bold text-white shadow-md shadow-emerald-500/10 cursor-pointer border-0"
+                  className="btn-bounce flex items-center gap-2 rounded-[20px] bg-emerald-500 hover:bg-emerald-600 px-6 py-3 text-sm font-medium text-white shadow-md shadow-emerald-500/10 cursor-pointer border-0"
                 >
                   Book a demo <ArrowRight className="h-4.5 w-4.5" />
                 </button>
@@ -40,7 +40,7 @@ export function Footer() {
             {/* Right floating mock panel */}
             <div className="lg:col-span-5 hidden lg:block rounded-xl border border-forest-700/50 bg-forest-900/60 p-6 shadow-lg relative">
               <div className="flex items-center justify-between border-b border-forest-800 pb-3 mb-4">
-                <span className="text-xs font-bold text-emerald-400 uppercase tracking-widest">WAAS Engine</span>
+                <span className="text-xs font-medium text-emerald-400 font-medium tracking-widest">WAAS Engine</span>
                 <span className="text-[10px] text-slate-400 font-mono">edge-active</span>
               </div>
               <div className="space-y-3.5">
@@ -71,14 +71,14 @@ export function Footer() {
           <div className="md:col-span-4 space-y-6">
             <a href="/" className="flex items-center gap-2.5 group">
               <div className="relative flex items-center h-7 w-10">
-                <div className="absolute left-0 h-6 w-6 rounded-full bg-emerald-500 mix-blend-screen" />
-                <div className="absolute right-0 h-6 w-6 rounded-full bg-white/40 mix-blend-screen" />
+                <div className="absolute left-0 h-6 w-6 rounded-[20px] bg-emerald-500 mix-blend-screen" />
+                <div className="absolute right-0 h-6 w-6 rounded-[20px] bg-white/40 mix-blend-screen" />
               </div>
-              <span className="font-display text-2xl font-bold tracking-tight text-white">
+              <span className="font-display text-2xl font-medium tracking-tight text-white">
                 waas<span className="text-emerald-400">.</span>
               </span>
             </a>
-            <p className="text-slate-400 text-sm leading-relaxed max-w-xs font-medium">
+            <p className="text-slate-400 text-md leading-relaxed max-w-xs font-medium">
               Predictable, premium, and fully managed website subscriptions for modern high-growth SaaS, startups, and agencies.
             </p>
             <div className="flex items-center gap-3">
@@ -87,7 +87,7 @@ export function Footer() {
                 href="https://x.com"
                 target="_blank"
                 rel="noreferrer"
-                className="h-8.5 w-8.5 rounded-full border border-forest-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-500 transition-colors cursor-pointer"
+                className="h-8.5 w-8.5 rounded-[20px] border border-forest-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-500 transition-colors cursor-pointer"
                 aria-label="Twitter"
               >
                 <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24">
@@ -98,7 +98,7 @@ export function Footer() {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noreferrer"
-                className="h-8.5 w-8.5 rounded-full border border-forest-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-500 transition-colors cursor-pointer"
+                className="h-8.5 w-8.5 rounded-[20px] border border-forest-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-500 transition-colors cursor-pointer"
                 aria-label="LinkedIn"
               >
                 <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24">
@@ -109,7 +109,7 @@ export function Footer() {
                 href="https://github.com"
                 target="_blank"
                 rel="noreferrer"
-                className="h-8.5 w-8.5 rounded-full border border-forest-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-500 transition-colors cursor-pointer"
+                className="h-8.5 w-8.5 rounded-[20px] border border-forest-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-500 transition-colors cursor-pointer"
                 aria-label="GitHub"
               >
                 <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24">
@@ -124,8 +124,8 @@ export function Footer() {
 
             {/* Product */}
             <div className="space-y-4">
-              <h4 className="text-sm font-bold text-emerald-400 uppercase tracking-widest">Product</h4>
-              <ul className="space-y-3 text-sm text-slate-400">
+              <h4 className="text-lg font-medium text-emerald-400 font-medium">Product</h4>
+              <ul className="space-y-3 text-md text-slate-400">
                 <li><a href="#features" className="hover:text-emerald-400 transition-colors">Features</a></li>
                 <li><a href="#pricing" className="hover:text-emerald-400 transition-colors">Pricing tiers</a></li>
                 <li><a href="#faq" className="hover:text-emerald-400 transition-colors">FAQ</a></li>
@@ -134,8 +134,8 @@ export function Footer() {
 
             {/* Resources */}
             <div className="space-y-4">
-              <h4 className="text-sm font-bold text-emerald-400 uppercase tracking-widest">Resources</h4>
-              <ul className="space-y-3 text-sm text-slate-400">
+              <h4 className="text-lg font-medium text-emerald-400 font-medium">Resources</h4>
+              <ul className="space-y-3 text-md text-slate-400">
                 <li><a href="#blog" className="hover:text-emerald-400 transition-colors">Dev blog</a></li>
                 <li><a href="#changelog" className="hover:text-emerald-400 transition-colors">Changelog</a></li>
                 <li><a href="#docs" className="hover:text-emerald-400 transition-colors">API & Docs</a></li>
@@ -144,7 +144,7 @@ export function Footer() {
 
             {/* Support */}
             <div className="space-y-4">
-              <h4 className="text-sm font-bold text-emerald-400 uppercase tracking-widest">Support</h4>
+              <h4 className="text-lg font-medium text-emerald-400 font-medium">Support</h4>
               <ul className="space-y-3 text-sm text-slate-400">
                 <li><a href="#help" className="hover:text-emerald-400 transition-colors">Help desk</a></li>
                 <li><a href="#privacy" className="hover:text-emerald-400 transition-colors">Privacy policy</a></li>
@@ -154,14 +154,14 @@ export function Footer() {
 
             {/* Contact */}
             <div className="space-y-4">
-              <h4 className="text-sm font-bold text-emerald-400 uppercase tracking-widest">Contact</h4>
-              <ul className="space-y-3 text-sm text-slate-400">
+              <h4 className="text-lg font-medium text-emerald-400 font-medium">Contact</h4>
+              <ul className="space-y-3 text-md text-slate-400">
                 <li>
                   <a href="mailto:hello@waas.xyz" className="flex items-center gap-2 hover:text-emerald-400 transition-colors">
                     <Mail className="h-4.5 w-4.5" /> hello@waas.xyz
                   </a>
                 </li>
-                <li className="text-xs text-slate-500 font-semibold uppercase tracking-wider">
+                <li className="text-sm text-slate-500 font-medium font-medium tracking-wider">
                   Based Worldwide
                 </li>
               </ul>
@@ -172,7 +172,7 @@ export function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-16 pt-8 border-t border-forest-700/40 flex flex-wrap justify-between items-center gap-4 text-xs text-slate-500">
+        <div className="mt-16 pt-8 border-t border-forest-700/40 flex flex-wrap justify-between items-center gap-4 text-md text-slate-500">
           <p>Copyright © {new Date().getFullYear()} WAAS. All rights reserved.</p>
           <p>
             Designed & built by{" "}
@@ -180,7 +180,7 @@ export function Footer() {
               href="https://thebigdev.co"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-emerald-400 underline decoration-emerald-500/35 hover:decoration-emerald-400 transition-colors font-bold"
+              className="hover:text-emerald-400 underline decoration-emerald-500/35 hover:decoration-emerald-400 transition-colors font-medium"
             >
               The Big Dev
             </a>

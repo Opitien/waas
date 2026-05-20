@@ -4,16 +4,16 @@
   --font-sans: var(--font-inter);
   --font-display: var(--font-space-grotesk);
   --font-mono: var(--font-space-mono);
-  
+
   --color-forest-900: #011E0F;
   --color-forest-800: #012E17;
   --color-forest-700: #033E20;
   --color-forest-600: #054F29;
-  
+
   --color-emerald-500: #10B981;
   --color-emerald-600: #059669;
   --color-emerald-50: #ECFDF5;
-  
+
   --color-mint-50: #F2FAF6;
   --color-mint-100: #E6F4EA;
   --color-mint-200: #D1EAD8;
@@ -31,26 +31,41 @@
   body {
     @apply bg-white text-slate-900 font-sans antialiased selection:bg-emerald-500 selection:text-white;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-display tracking-tight text-slate-900;
   }
 }
 
-@layer utilities {
-  .btn-bounce {
-    @apply hover:scale-[1.05] active:scale-[0.99] duration-150 transition-all ease-out;
+@keyframes pulse-soft {
+
+  0%,
+  100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.03);
   }
 }
 
-@keyframes pulse-soft {
-  0%, 100% { opacity: 0.8; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.03); }
-}
-
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .animate-pulse-soft {
@@ -65,6 +80,7 @@
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;

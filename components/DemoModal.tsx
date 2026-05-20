@@ -57,16 +57,16 @@ export function DemoModal() {
             {/* Header */}
             <div className="flex items-center justify-between px-6 py-5 border-b border-slate-100 shrink-0">
               <div>
-                <h3 className="font-display text-lg sm:text-xl font-extrabold text-slate-900">
+                <h3 className="font-display text-lg sm:text-xl font-medium text-slate-900">
                   {planName ? `Get Started with ${planName}` : "Book a Live Demo"}
                 </h3>
-                <p className="text-xs sm:text-sm font-semibold text-slate-400 mt-0.5">
+                <p className="text-xs sm:text-sm font-medium text-slate-400 mt-0.5">
                   Complete the quick form below to sync with your WAAS team.
                 </p>
               </div>
               <button
                 onClick={handleClose}
-                className="h-9 w-9 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:text-slate-800 hover:bg-slate-50 transition-all cursor-pointer"
+                className="h-9 w-9 rounded-[20px] border border-slate-200 flex items-center justify-center text-slate-400 hover:text-slate-800 hover:bg-slate-50 transition-all cursor-pointer"
                 aria-label="Close modal"
               >
                 <X className="h-4.5 w-4.5" />

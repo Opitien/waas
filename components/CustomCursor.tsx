@@ -83,7 +83,7 @@ export function CustomCursor() {
 
     const handleMouseUp = () => {
       isMouseDownRef.current = false;
-      
+
       // Dynamic pointer determination based on released position element
       const target = document.elementFromPoint(mouseX.get() + 4, mouseY.get() + 4);
       const isInteractive = target && (
@@ -132,7 +132,7 @@ export function CustomCursor() {
     <>
       {/* 1. Core Center Dot (Moves instantly with mouse, expands on hover) */}
       <motion.div
-        className="pointer-events-none fixed left-0 top-0 z-[9999] h-2 w-2 rounded-full bg-emerald-500"
+        className="pointer-events-none fixed left-0 top-0 z-[9999] h-5 w-5 rounded-[20px] bg-emerald-500"
         style={{ x: mouseX, y: mouseY }}
         animate={{
           scale: cursorType === "pointer" ? 1.5 : cursorType === "grabbing" ? 0 : 1,
@@ -140,38 +140,6 @@ export function CustomCursor() {
         }}
         transition={{ type: "spring", stiffness: 450, damping: 25 }}
       />
-
-      {/* 2. Custom Spring-elastic Outer Ring */}
-      <motion.div
-        className="pointer-events-none fixed left-0 top-0 z-[9998] rounded-full border border-emerald-500/30 flex items-center justify-center"
-        style={{
-          x: ringX,
-          y: ringY,
-          // Shift outer ring coordinate slightly to center perfectly around 8px dot
-          translateX: "-12px",
-          translateY: "-12px",
-        }}
-        animate={{
-          width: cursorType === "pointer" ? 48 : cursorType === "grabbing" ? 16 : 28,
-          height: cursorType === "pointer" ? 48 : cursorType === "grabbing" ? 16 : 28,
-          borderColor: cursorType === "pointer" ? "rgba(16, 185, 129, 0.7)" : "rgba(16, 185, 129, 0.3)",
-          backgroundColor:
-            cursorType === "pointer"
-              ? "rgba(16, 185, 129, 0.08)"
-              : cursorType === "grabbing"
-              ? "rgba(16, 185, 129, 0.5)"
-              : "rgba(16, 185, 129, 0.02)",
-          scale: cursorType === "grabbing" ? 0.95 : 1,
-        }}
-        transition={{ type: "spring", stiffness: 400, damping: 28 }}
-      >
-        {/* Render indicator label for grab status inside the ring */}
-        {cursorType === "grab" && (
-          <span className="text-[7px] font-black uppercase tracking-widest text-emerald-400/90 scale-75 mt-0.5">
-            drag
-          </span>
-        )}
-      </motion.div>
     </>
   );
 }

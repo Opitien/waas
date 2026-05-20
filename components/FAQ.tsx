@@ -34,7 +34,7 @@ export function FAQ() {
   return (
     <section id="faq" className="py-20 lg:py-28 bg-mint-50 px-6 lg:px-8 border-y border-slate-100 overflow-hidden scroll-mt-24">
       <div className="mx-auto max-w-4xl">
-        
+
         {/* Section Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -43,10 +43,10 @@ export function FAQ() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center max-w-2xl mx-auto mb-16"
         >
-          <span className="rounded-full bg-emerald-100 text-emerald-800 font-bold text-xs uppercase tracking-wide px-3 py-1 border border-emerald-200">
+          <span className="rounded-[20px] bg-emerald-100 text-emerald-800 font-medium text-xs uppercase tracking-wide px-3 py-1 border border-emerald-200">
             Common Questions
           </span>
-          <h2 className="mt-4 font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-5xl leading-tight">
+          <h2 className="mt-4 font-display text-3xl font-medium tracking-tight text-slate-900 sm:text-5xl leading-tight">
             Frequently Asked Questions
           </h2>
           <p className="mt-4 text-slate-500 text-base sm:text-lg">
@@ -67,23 +67,22 @@ export function FAQ() {
             return (
               <div
                 key={idx}
-                className="rounded-2xl border border-slate-200/60 bg-white overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+                className="rounded-2xl border border-slate-200/60 bg-white overflow-hidden"
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : idx)}
                   className="flex w-full items-center justify-between p-5 sm:p-6 text-left focus:outline-none cursor-pointer"
                 >
-                  <span className="text-sm sm:text-base font-bold text-slate-800 flex items-center gap-3">
+                  <span className="text-sm sm:text-base font-medium text-slate-800 flex items-center gap-3">
                     <HelpCircle className="h-5 w-5 text-emerald-500 shrink-0" />
                     {faq.question}
                   </span>
                   <ChevronDown
-                    className={`h-5 w-5 text-slate-400 transition-transform duration-300 shrink-0 ${
-                      isOpen ? "rotate-180 text-emerald-500" : ""
-                    }`}
+                    className={`h-5 w-5 text-slate-400 transition-transform duration-300 shrink-0 ${isOpen ? "rotate-180 text-emerald-500" : ""
+                      }`}
                   />
                 </button>
-                
+
                 <AnimatePresence initial={false}>
                   {isOpen && (
                     <motion.div

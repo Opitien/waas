@@ -65,10 +65,10 @@ export function Testimonials() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="max-w-3xl mx-auto text-center mb-16"
         >
-          <span className="rounded-full bg-emerald-100 text-emerald-800 font-bold text-xs uppercase tracking-wide px-3 py-1 border border-emerald-200">
+          <span className="rounded-[20px] bg-emerald-100 text-emerald-800 font-medium text-xs uppercase tracking-wide px-3 py-1 border border-emerald-200">
             Client Success
           </span>
-          <h2 className="mt-4 font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-5xl leading-tight">
+          <h2 className="mt-4 font-display text-3xl font-medium tracking-tight text-slate-900 sm:text-5xl leading-tight">
             What fast-moving teams are saying.
           </h2>
           <p className="mt-4 text-slate-500 text-base sm:text-lg">
@@ -78,14 +78,14 @@ export function Testimonials() {
       </div>
 
       {/* Infinite Scrolling Marquee Container */}
-      <div 
+      <div
         className="marquee-container relative w-full overflow-hidden py-4 select-none [mask-image:linear-gradient(to_right,transparent_0%,#000_10%,#000_90%,transparent_100%)]"
       >
         <div className="animate-marquee-ltr flex gap-8">
           {duplicatedTestimonials.map((t, idx) => (
             <div
               key={idx}
-              className="w-[300px] sm:w-[420px] shrink-0 rounded-2xl border border-slate-200/60 bg-white p-7 shadow-sm shadow-slate-100 hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between cursor-pointer"
+              className="w-[300px] sm:w-[420px] shrink-0 rounded-2xl border border-slate-200/60 bg-white p-7  shadow-slate-100 hover:border-slate-300 transition-all flex flex-col justify-between cursor-pointer"
             >
               <div className="space-y-4">
                 {/* Five Stars Rating */}
@@ -94,7 +94,7 @@ export function Testimonials() {
                     <Star key={i} className="h-4.5 w-4.5 fill-emerald-500 stroke-emerald-500" />
                   ))}
                 </div>
-                
+
                 {/* Quote Text */}
                 <p className="text-slate-600 text-sm sm:text-base leading-relaxed italic font-medium">
                   "{t.quote}"
@@ -104,10 +104,10 @@ export function Testimonials() {
               {/* User details */}
               <div className="mt-6 pt-5 border-t border-slate-100 flex items-center justify-between">
                 <div>
-                  <h4 className="text-sm font-extrabold text-slate-900">{t.name}</h4>
-                  <p className="text-xs font-semibold text-slate-500">{t.role}</p>
+                  <h4 className="text-sm font-medium text-slate-900">{t.name}</h4>
+                  <p className="text-xs font-medium text-slate-500">{t.role}</p>
                 </div>
-                <div className="font-display font-extrabold text-xs text-slate-350 uppercase tracking-widest">
+                <div className="font-display font-medium text-xs text-slate-350 uppercase tracking-widest">
                   {t.logo}
                 </div>
               </div>
